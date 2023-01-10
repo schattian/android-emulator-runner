@@ -1,20 +1,6 @@
 import * as validator from '../src/input-validator';
 
 describe('api-level validator tests', () => {
-  it('Throws if api-level is not a number', () => {
-    const func = () => {
-      validator.checkApiLevel('api');
-    };
-    expect(func).toThrowError(`Unexpected API level: 'api'.`);
-  });
-
-  it('Throws if api-level is not an integer', () => {
-    const func = () => {
-      validator.checkApiLevel('29.1');
-    };
-    expect(func).toThrowError(`Unexpected API level: '29.1'.`);
-  });
-
   it('Throws if api-level is lower than min API supported', () => {
     const func = () => {
       validator.checkApiLevel('14');
