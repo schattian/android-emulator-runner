@@ -4,9 +4,6 @@ export const VALID_ARCHS: Array<string> = ['x86', 'x86_64', 'arm64-v8a'];
 export const VALID_CHANNELS: Array<string> = ['stable', 'beta', 'dev', 'canary'];
 
 export function checkApiLevel(apiLevel: string): void {
-  if (isNaN(Number(apiLevel)) || !Number.isInteger(Number(apiLevel))) {
-    throw new Error(`Unexpected API level: '${apiLevel}'.`);
-  }
   if (Number(apiLevel) < MIN_API_LEVEL) {
     throw new Error(`Minimum API level supported is ${MIN_API_LEVEL}.`);
   }
